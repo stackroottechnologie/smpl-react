@@ -46,6 +46,7 @@ const waitForToken = (timeoutMs = 3000, intervalMs = 100): Promise<string | null
 
 const buildApiUrl = (endpoint: string): string => {
   const baseUrl = Config.API_BASE_URL || '';
+  console.log('buildApiUrl: baseUrl:', baseUrl, 'endpoint:', endpoint);
   const separator = baseUrl.endsWith('/') || endpoint.startsWith('/') ? '' : '/';
   return `${baseUrl}${separator}${endpoint.replace(/^\//, '')}`;
 };
